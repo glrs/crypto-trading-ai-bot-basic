@@ -51,7 +51,8 @@ class AutoTrader:
 
 
             if i % 6 == 0: # Perform a prediction every 6 hours
-                prediction = self.advisor.predict(np.array([samples[i]]))
+                # prediction = self.advisor.predict(np.array([samples[i]]))
+                prediction = np.random.randint(2)
                 #btc_price = samples[i][len(samples[i])-1]
                 btc_price = prices[i]
 
@@ -67,7 +68,7 @@ class AutoTrader:
 
                 self.account.btc_balance = self.account.btc_amount * btc_price
 
-                time.sleep(1)  # Only for Visual Purposes
+                # time.sleep(1)  # Only for Visual Purposes
 
         print("#################################################################################################")
         print("#           Account Balance: $", (self.account.usd_balance + self.account.btc_balance), " BTC: $",
